@@ -1,0 +1,76 @@
+package com.sdu.wh.dao;
+
+import java.sql.Date;
+
+public class OutTable {
+	
+	private String mProductNo;
+	private int mOutNum;
+	private Date mOutDate;
+	private String mResponsiblePerson;
+	private String mOutNo;
+	
+	public OutTable() {
+		super();
+	}
+
+	
+	public OutTable(String productNo, int outNum, Date outDate, String responsiblePerson, String outNo) {
+		super();
+		mProductNo = productNo;
+		mOutNum = outNum;
+		mOutDate = outDate;
+		mResponsiblePerson = responsiblePerson;
+		mOutNo = outNo;
+	}
+
+
+	public String getProductNo() {
+		return mProductNo;
+	}
+
+
+	public void setProductNo(String productNo) {
+		mProductNo = productNo;
+	}
+
+
+	public int getOutNum() {
+		return mOutNum;
+	}
+
+
+	public void setOutNum(int outNum) {
+		mOutNum = outNum;
+	}
+
+
+	public Date getOutDate() {
+		return mOutDate;
+	}
+
+
+	public void setOutDate(Date outDate) {
+		mOutDate = outDate;
+	}
+
+
+	public String getResponsiblePerson() {
+		return mResponsiblePerson;
+	}
+
+
+	public void setResponsiblePerson(String responsiblePerson) {
+		mResponsiblePerson = responsiblePerson;
+	}
+
+
+	public String getOutNo() {
+		return mOutNo;
+	}
+
+
+	public void setOutNo(String outNo) {
+		mOutNo = outNo;
+	}
+}

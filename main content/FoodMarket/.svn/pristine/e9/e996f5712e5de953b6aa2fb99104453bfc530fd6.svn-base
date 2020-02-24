@@ -1,0 +1,86 @@
+package com.sdu.wh.dao;
+
+public class Product {
+
+	private String mNo;				/*产品编号*/
+	private String mName;			/*产品名称*/
+	private int mShelfLife;			/*保质期*/
+	private int mProductionCycle;	/*生产周期*/
+	private float mPrice;			/*产品价格*/
+	private int mNum;				/*产品库存*/
+	
+	public Product() {
+		super();
+	}
+
+
+	public Product(String productNo, String productName, int productShelfLife, int productProductionCycle,
+			float productPrice) {
+		super();
+		mNo = productNo;
+		mName = productName;
+		mShelfLife = productShelfLife;
+		mProductionCycle = productProductionCycle;
+		mPrice = productPrice;
+	}
+
+
+	public int getNum() {
+		return mNum;
+	}
+
+
+	public void setNum(int num) {
+		mNum = num;
+	}
+
+
+	public String getProductNo() {
+		return mNo;
+	}
+	
+	
+	public void setProductNo(String productNo) {
+		mNo = productNo;
+	}
+	
+	
+	public String getProductName() {
+		return mName;
+	}
+	
+	
+	public void setProductName(String productName) {
+		mName = productName;
+	}
+	
+	
+	public int getmShelfLife() {
+		return mShelfLife;
+	}
+	
+	
+	public void setmShelfLife(int productShelfLife) {
+		mShelfLife = productShelfLife;
+	}
+	
+	
+	public int getProductProductionCycle() {
+		return mProductionCycle;
+	}
+	
+	
+	public void setProductProductionCycle(int productProductionCycle) {
+		mProductionCycle = productProductionCycle;
+	}
+	
+	
+	public float getProductPrice() {
+		return mPrice;
+	}
+	
+	
+	public void setProductPrice(float productPrice) {
+		mPrice = productPrice;
+	}
+}

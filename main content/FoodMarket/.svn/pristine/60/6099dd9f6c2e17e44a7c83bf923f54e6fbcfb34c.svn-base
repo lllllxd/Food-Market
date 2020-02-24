@@ -1,0 +1,105 @@
+package com.sdu.wh.dao;
+
+import java.sql.Date;
+
+/**
+ * 订货单类
+ * @author Gale
+ *
+ */
+public class OrderForm {
+
+	private String mNo;					/*订货单号*/
+	private String mCustomerNo;			/*客户编号*/
+	private String mProductNo;			/*产品编号*/
+	private int mProductNum;			/*产品数量*/
+	private Date mPickUpDate;			/*提货日期*/
+	private int mState;					/*订单状态*/
+	private Date mCreateDate;			/*日期*/
+	private String mResponsiblePerson;	/*负责人*/
+	
+	public OrderForm() {
+		super();
+	}
+
+	public OrderForm(String orderFormNo, String customerNo, String productNo, int orderFormNum, Date billOfLadingDate,
+			Date orderFormDate, String responsiblePerson) {
+		super();
+		mNo = orderFormNo;
+		mCustomerNo = customerNo;
+		mProductNo = productNo;
+		mProductNum = orderFormNum;
+		mPickUpDate = billOfLadingDate;
+		mCreateDate = orderFormDate;
+		mResponsiblePerson = responsiblePerson;
+	}
+
+	public String getOrderFormNo() {
+		return mNo;
+	}
+	
+	
+	public void setOrderFormNo(String orderFormNo) {
+		mNo = orderFormNo;
+	}
+	
+	
+	public String getCustomerNo() {
+		return mCustomerNo;
+	}
+	
+	
+	public void setCustomerNo(String customerNo) {
+		mCustomerNo = customerNo;
+	}
+	
+	
+	public String getProductNo() {
+		return mProductNo;
+	}
+	
+	
+	public void setProductNo(String productNo) {
+		mProductNo = productNo;
+	}
+	
+	
+	public int getOrderFormNum() {
+		return mProductNum;
+	}
+	
+	
+	public void setOrderFormNum(int orderFormNum) {
+		mProductNum = orderFormNum;
+	}
+
+
+	public Date getBillOfLadingDate() {
+		return mPickUpDate;
+	}
+
+
+	public void setBillOfLadingDate(Date billOfLadingDate) {
+		mPickUpDate = billOfLadingDate;
+	}
+
+
+	public Date getOrderFormDate() {
+		return mCreateDate;
+	}
+
+
+	public void setOrderFormDate(Date orderFormDate) {
+		mCreateDate = orderFormDate;
+	}
+
+
+	public String getResponsiblePerson() {
+		return mResponsiblePerson;
+	}
+
+
+	public void setResponsiblePerson(String responsiblePerson) {
+		mResponsiblePerson = responsiblePerson;
+	}
+}

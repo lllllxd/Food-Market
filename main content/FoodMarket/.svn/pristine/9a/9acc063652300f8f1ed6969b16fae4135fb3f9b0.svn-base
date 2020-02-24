@@ -1,0 +1,45 @@
+package com.sdu.wh.bll;
+
+import java.awt.List;
+import java.util.ArrayList;
+import java.util.Map;
+
+import com.sdu.wh.dal.MarketingDAL;
+import com.sdu.wh.dao.Customer;
+import com.sdu.wh.dao.OrderForm;
+import com.sdu.wh.dao.Product;
+
+public class MarketingBLL {
+	
+	/**
+	 * 创建订单
+	 * @param customerNo 客户编号
+	 * @param products 所选产品以及对应数量
+	 * @return
+	 */
+	public static boolean createOrderForm(String customerNo, Map<Product, Integer> products) {
+		if(MarketingDAL.saveOrderForm(customerNo, products)) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
+	/**
+	 * 检查查询客户编号
+	 * @param customerNo 客户编号
+	 * @return 客户信息对象
+	 */
+	public static Customer checkCustomerMessage(String customerNo) {
+		return MarketingDAL.queryCustomerMessage(customerNo);
+	}
+	
+	/**
+	 * 返回所有商品信息及库存
+	 * @return
+	 */
+	public static ArrayList<Product> findAllProducts() {
+		return MarketingDAL.queryAllProducts();
+	}
+	
+}

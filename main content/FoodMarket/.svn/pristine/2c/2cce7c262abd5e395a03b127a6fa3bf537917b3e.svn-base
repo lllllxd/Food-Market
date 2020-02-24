@@ -1,0 +1,52 @@
+package com.sdu.wh.dao;
+
+import java.sql.Date;
+
+public class Inventory {
+
+	private String mProductNo;
+	private int mInventoryNum;
+	private Date mInventoryDate;
+	
+	public Inventory() {
+		super();
+	}
+
+	
+	public Inventory(String productNo, int inventoryNum, Date inventoryDate) {
+		super();
+		mProductNo = productNo;
+		mInventoryNum = inventoryNum;
+		mInventoryDate = inventoryDate;
+	}
+
+
+	public String getProductNo() {
+		return mProductNo;
+	}
+	
+	
+	public void setProductNo(String productNo) {
+		mProductNo = productNo;
+	}
+	
+	
+	public int getInventoryNum() {
+		return mInventoryNum;
+	}
+	
+	
+	public void setInventoryNum(int inventoryNum) {
+		mInventoryNum = inventoryNum;
+	}
+
+
+	public Date getInventoryDate() {
+		return mInventoryDate;
+	}
+
+
+	public void setInventoryDate(Date inventoryDate) {
+		mInventoryDate = inventoryDate;
+	}
+}

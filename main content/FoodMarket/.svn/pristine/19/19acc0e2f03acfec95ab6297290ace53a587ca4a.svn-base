@@ -1,0 +1,50 @@
+package com.sdu.wh.dao;
+
+public class Customer {
+	
+	private String mNo;
+	private String mName;
+	private int mLevel;
+	
+	
+	public Customer() {
+		super();
+	}
+	
+	
+	public Customer(String No,String Name,int Level) {
+		super();
+		this.mNo=No;
+		this.mName=Name;
+		this.mLevel=Level;
+	}
+	
+	public String getNo() {
+		return mNo;
+	}
+	
+	
+	public void setNo(String No) {
+		mNo=No;
+	}
+	
+	
+	public String getName() {
+		return mName;
+	}
+	
+	
+	public void setName(String Name) {
+		mName=Name;
+	}
+	
+	
+	public int getLevel() {
+		return mLevel;
+	}
+	
+	
+	public void setLevel(int Level) {
+		mLevel=Level;
+	}
+}

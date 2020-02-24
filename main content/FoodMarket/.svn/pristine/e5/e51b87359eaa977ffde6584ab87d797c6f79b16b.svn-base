@@ -1,0 +1,50 @@
+package com.sdu.wh.dao;
+
+public class PostTable {
+
+	private String mUserNo;
+	private String mPost;
+	private String mDepartment;
+	
+	public PostTable() {
+		super();
+	}
+
+	
+	public PostTable(String userNo, String post, String department) {
+		super();
+		mUserNo = userNo;
+		mPost = post;
+		mDepartment = department;
+	}
+
+
+	public String getUserNo() {
+		return mUserNo;
+	}
+
+
+	public void setUserNo(String userNo) {
+		mUserNo = userNo;
+	}
+
+
+	public String getPost() {
+		return mPost;
+	}
+
+
+	public void setPost(String post) {
+		mPost = post;
+	}
+
+
+	public String getDepartment() {
+		return mDepartment;
+	}
+
+
+	public void setDepartment(String department) {
+		mDepartment = department;
+	}
+}

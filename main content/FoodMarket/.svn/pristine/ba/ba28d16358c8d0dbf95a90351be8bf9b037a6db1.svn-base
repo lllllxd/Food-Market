@@ -1,0 +1,161 @@
+package com.sdu.wh.bll;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+
+import javax.swing.JOptionPane;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+
+import com.sdu.wh.common.MyButtonEditor;
+import com.sdu.wh.common.MyButtonRenderer;
+import com.sdu.wh.dal.FinanceDAL;
+import com.sdu.wh.dao.OrderForm;
+
+public class FinanceBLL {
+	
+	private Object[][] mData = new Object[1][5];
+	
+	/**
+	 * 获取所有待处理订单
+	 * @return
+	 */
+	public static ArrayList<OrderForm> queryPendingPrderForm(){
+		return FinanceDAL.queryPendingPrderForm();
+	}
+	
+	public static JTable refreshRefundTable(JTable table) {
+		
+		Object[][] data = FinanceDAL.getRefundTableData();
+		
+		table.setModel(new DefaultTableModel(new String[]{"订单编号", "客户编号", "收款情况", "已收款金额", "退款"}, 0) {
+            @Override
+            public Object getValueAt(int row, int column) {
+                return data[row][column];
+            }
+
+            @Override
+            public int getRowCount() {
+                return data.length;
+            }
+
+            @Override
+            public int getColumnCount() {
+                return data[0].length;
+            }
+            
+            @Override
+            public void setValueAt(Object aValue, int row, int column){
+                data[row][column] = aValue;
+                fireTableCellUpdated(row, column);
+            }
+            
+            @Override
+            public boolean isCellEditable(int row, int column) {
+                if (column == data[0].length - 1) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        });
+
+		MyButtonEditor editor = new MyButtonEditor();
+		editor.button.addActionListener(new ActionListener() {/*点击按钮监听*/
+            public void actionPerformed(ActionEvent e) {
+                int res = JOptionPane.showConfirmDialog(null,
+                        "确认已退款?" + editor.mValue, "退款确认",
+                        JOptionPane.YES_NO_OPTION);
+                /*
+                if(res ==  JOptionPane.YES_OPTION){
+                    editor.num++;
+                }
+                //stopped!!!!
+                //fireEditingStopped();
+                 */
+				
+            }
+        });
+
+        table.getColumnModel().getColumn(data[0].length - 1).setCellEditor(
+                editor);
+
+        table.getColumnModel().getColumn(data[0].length - 1).setCellRenderer(
+                new MyButtonRenderer());
+
+        table.setRowSelectionAllowed(false);
+		
+		return table;
+	}
+	
+	public static JTable refreshFinanceTable(JTable table) {
+		
+		Object[][] data = FinanceDAL.getFinanceTableData();
+		
+		table.setModel(new DefaultTableModel(new String[]{"订单编号", "客户编号", "收款情况", "预付款", "全款"}, 0) {
+            @Override
+            public Object getValueAt(int row, int column) {
+                return data[row][column];
+            }
+
+            @Override
+            public int getRowCount() {
+                return data.length;
+            }
+
+            @Override
+            public int getColumnCount() {
+                return data[0].length;
+            }
+            
+            @Override
+            public void setValueAt(Object aValue, int row, int column){
+                data[row][column] = aValue;
+                fireTableCellUpdated(row, column);
+            }
+            
+            @Override
+            public boolean isCellEditable(int row, int column) {
+                if (column == data[0].length - 1 || column == data[0].length - 2) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        });
+
+		MyButtonEditor editor = new MyButtonEditor();
+		editor.button.addActionListener(new ActionListener() {/*点击按钮监听*/
+            public void actionPerformed(ActionEvent e) {
+                int res = JOptionPane.showConfirmDialog(null,
+                        "确认已收款?" + editor.mValue, "收款确认",
+                        JOptionPane.YES_NO_OPTION);
+                /*
+                if(res ==  JOptionPane.YES_OPTION){
+                    editor.num++;
+                }
+                //stopped!!!!
+                //fireEditingStopped();
+                 */
+				
+            }
+        });
+
+        table.getColumnModel().getColumn(data[0].length - 1).setCellEditor(
+                editor);
+
+        table.getColumnModel().getColumn(data[0].length - 1).setCellRenderer(
+                new MyButtonRenderer());
+
+        table.getColumnModel().getColumn(data[0].length - 2).setCellEditor(
+                editor);
+
+        table.getColumnModel().getColumn(data[0].length - 2).setCellRenderer(
+                new MyButtonRenderer());
+        
+        table.setRowSelectionAllowed(false);
+		
+		return table;
+	}
+}

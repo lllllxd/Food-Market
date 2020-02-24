@@ -1,0 +1,62 @@
+package com.sdu.wh.dao;
+
+public class SalesStrategy {
+
+	private int mLevel;
+	private float mDiscount;//ÕÛ¿Û
+	private float mPrepaymentRatio;//Ô¤¸¶¿î±ÈÀý
+	private float mResponsiblePerson;
+	
+	public SalesStrategy() {
+		super();
+	}
+
+	
+	public SalesStrategy(int level, float discount, float prepaymentRatio, float responsiblePerson) {
+		super();
+		mLevel = level;
+		mDiscount = discount;
+		mPrepaymentRatio = prepaymentRatio;
+		this.mResponsiblePerson = responsiblePerson;
+	}
+
+
+	public int getLevel() {
+		return mLevel;
+	}
+
+
+	public void setLevel(int level) {
+		mLevel = level;
+	}
+
+
+	public float getDiscount() {
+		return mDiscount;
+	}
+
+
+	public void setDiscount(float discount) {
+		mDiscount = discount;
+	}
+
+
+	public float getPrepaymentRatio() {
+		return mPrepaymentRatio;
+	}
+
+
+	public void setPrepaymentRatio(float prepaymentRatio) {
+		mPrepaymentRatio = prepaymentRatio;
+	}
+
+
+	public float getResponsiblePerson() {
+		return mResponsiblePerson;
+	}
+
+
+	public void setResponsiblePerson(float responsiblePerson) {
+		mResponsiblePerson = responsiblePerson;
+	}
+}

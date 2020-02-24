@@ -1,0 +1,89 @@
+package com.sdu.wh.dao;
+
+import java.sql.Date;
+
+public class ProductionSchedule {
+
+	private String mProductNo;
+	private int mProductionNum;
+	private Date mProductionScheduleDate;//生产计划表日期
+	private Date mProductionBuildDate;//生产产品时间
+	private String mResponsiblePerson;
+	private String mProductionScheduleNo;	
+	
+	public ProductionSchedule() {
+		super();
+	}
+	
+	
+	public ProductionSchedule(String productNo, int productionNum, Date productionScheduleDate,
+			Date productionBuildDate, String responsiblePerson, String billOfLadingNo, String productionScheduleNo) {
+		super();
+		mProductNo = productNo;
+		mProductionNum = productionNum;
+		mProductionScheduleDate = productionScheduleDate;
+		mProductionBuildDate = productionBuildDate;
+		mResponsiblePerson = responsiblePerson;
+		mProductionScheduleNo = productionScheduleNo;
+	}
+	
+	
+	public String getProductNo() {
+		return mProductNo;
+	}
+	
+	
+	public void setProductNo(String productNo) {
+		mProductNo = productNo;
+	}
+	
+	
+	public int getProductionNum() {
+		return mProductionNum;
+	}
+	
+	
+	public void setProductionNum(int productionNum) {
+		mProductionNum = productionNum;
+	}
+	
+	
+	public Date getProductionScheduleDate() {
+		return mProductionScheduleDate;
+	}
+	
+	
+	public void setProductionScheduleDate(Date productionScheduleDate) {
+		mProductionScheduleDate = productionScheduleDate;
+	}
+	
+	
+	public Date getProductionBuildDate() {
+		return mProductionBuildDate;
+	}
+	
+	
+	public void setProductionBuildDate(Date productionBuildDate) {
+		mProductionBuildDate = productionBuildDate;
+	}
+	
+	
+	public String getResponsiblePerson() {
+		return mResponsiblePerson;
+	}
+	
+	
+	public void setResponsiblePerson(String responsiblePerson) {
+		mResponsiblePerson = responsiblePerson;
+	}
+	
+	
+	public String getProductionScheduleNo() {
+		return mProductionScheduleNo;
+	}
+	
+	
+	public void setProductionScheduleNo(String productionScheduleNo) {
+		mProductionScheduleNo = productionScheduleNo;
+	}
+}

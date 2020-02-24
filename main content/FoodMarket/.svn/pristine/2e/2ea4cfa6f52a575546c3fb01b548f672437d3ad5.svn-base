@@ -1,0 +1,63 @@
+package com.sdu.wh.dao;
+
+import java.sql.Date;
+
+public class SalesStrategyHistory {
+
+	private Date mDate;
+	private String mResponsiblePerson;
+	private String mDetail;
+	private String mSaleHistoryDate;
+	
+	public SalesStrategyHistory() {
+		super();
+	}
+
+	
+	public SalesStrategyHistory(Date date, String responsiblePerson, String detail, String saleHistoryDate) {
+		super();
+		mDate = date;
+		mResponsiblePerson = responsiblePerson;
+		mDetail = detail;
+		mSaleHistoryDate = saleHistoryDate;
+	}
+
+	
+	public Date getDate() {
+		return mDate;
+	}
+
+	
+	public void setDate(Date date) {
+		mDate = date;
+	}
+
+	
+	public String getResponsiblePerson() {
+		return mResponsiblePerson;
+	}
+
+	public void setResponsiblePerson(String responsiblePerson) {
+		mResponsiblePerson = responsiblePerson;
+	}
+
+	
+	public String getDetail() {
+		return mDetail;
+	}
+
+	
+	public void setDetail(String detail) {
+		mDetail = detail;
+	}
+
+	
+	public String getSaleHistoryDate() {
+		return mSaleHistoryDate;
+	}
+
+	
+	public void setSaleHistoryDate(String saleHistoryDate) {
+		mSaleHistoryDate = saleHistoryDate;
+	}
+}

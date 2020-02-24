@@ -1,0 +1,36 @@
+package com.sdu.wh.dal;
+
+import java.util.ArrayList;
+import java.util.Map;
+
+import com.sdu.wh.dao.Customer;
+import com.sdu.wh.dao.OrderForm;
+import com.sdu.wh.dao.Product;
+
+public class MarketingDAL {
+
+	public static boolean saveOrderForm(String customerNo, Map<Product, Integer> products) {
+		
+		for (Map.Entry<Product, Integer> entry : products.entrySet()) {
+		/**
+		 * 循环调用存储过程存储所有数据
+		 */
+			
+		}
+		return true;
+	}
+
+	public static Customer queryCustomerMessage(String customerNo) {
+		Customer customer = null;
+		/**
+		 * 查询数据库
+		 */
+		return customer;
+	}
+	
+	public static ArrayList<Product>  queryAllProducts(){
+		ArrayList<Product> products = null;
+		
+		return products;
+	}
+}

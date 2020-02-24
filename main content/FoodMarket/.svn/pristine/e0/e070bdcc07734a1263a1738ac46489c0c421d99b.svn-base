@@ -1,0 +1,64 @@
+package com.sdu.wh.dao;
+
+import java.sql.Date;
+
+public class Cashier {
+
+	private float mAmoney;
+	private Date mDate;
+	private String mDetail;
+	private String mANo;
+	
+	public Cashier() {
+		super();
+	}
+
+	
+	public Cashier(float amoney, Date date, String detail, String aNo) {
+		super();
+		mAmoney = amoney;
+		mDate = date;
+		mDetail = detail;
+		mANo = aNo;
+	}
+
+
+	public float getAmoney() {
+		return mAmoney;
+	}
+
+
+	public void setAmoney(float amoney) {
+		mAmoney = amoney;
+	}
+
+
+	public Date getDate() {
+		return mDate;
+	}
+
+
+	public void setDate(Date date) {
+		mDate = date;
+	}
+
+
+	public String getDetail() {
+		return mDetail;
+	}
+
+
+	public void setDetail(String detail) {
+		mDetail = detail;
+	}
+
+
+	public String getANo() {
+		return mANo;
+	}
+
+
+	public void setANo(String aNo) {
+		mANo = aNo;
+	}
+}

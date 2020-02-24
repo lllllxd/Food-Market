@@ -1,0 +1,77 @@
+package com.sdu.wh.dao;
+
+import java.sql.Date;
+
+
+public class InTable {
+
+	private String mProductNo;
+	private int mInNum;
+	private Date mInDate;
+	private String mResponsiblePerson;
+	private String mInNo;
+	
+	public InTable() {
+		super();
+	}
+
+
+	public InTable(String productNo, int inNum, Date inDate, String responsiblePerson, String inNo) {
+		super();
+		mProductNo = productNo;
+		mInNum = inNum;
+		mInDate = inDate;
+		mResponsiblePerson = responsiblePerson;
+		mInNo = inNo;
+	}
+
+
+	public String getProductNo() {
+		return mProductNo;
+	}
+
+
+	public void setProductNo(String productNo) {
+		mProductNo = productNo;
+	}
+
+
+	public int getInNum() {
+		return mInNum;
+	}
+
+
+	public void setInNum(int inNum) {
+		mInNum = inNum;
+	}
+
+
+	public Date getInDate() {
+		return mInDate;
+	}
+
+
+	public void setInDate(Date inDate) {
+		mInDate = inDate;
+	}
+
+
+	public String getResponsiblePerson() {
+		return mResponsiblePerson;
+	}
+
+
+	public void setResponsiblePerson(String responsiblePerson) {
+		mResponsiblePerson = responsiblePerson;
+	}
+
+
+	public String getInNo() {
+		return mInNo;
+	}
+
+
+	public void setInNo(String inNo) {
+		mInNo = inNo;
+	}
+}

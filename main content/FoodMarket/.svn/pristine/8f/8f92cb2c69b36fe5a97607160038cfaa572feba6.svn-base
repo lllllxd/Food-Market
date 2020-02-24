@@ -1,0 +1,101 @@
+package com.sdu.wh.dao;
+
+import java.sql.Date;
+
+public class BillOfLading {
+
+	private String mBillOfLadingNo;
+	private String mCustomerNo;
+	private String mProductNo;
+	private int mOrderNum;
+	private Date mBillOfLadingDate;//提货日期
+	private Date mMakeBillOfLadingDate;//提货单产生日期
+	private String mResponsiblePerson;
+	
+	public BillOfLading() {
+		super();
+	}
+
+	
+	public BillOfLading(String billOfLadingNo, String customerNo, String productNo, int orderNum, Date billOfLadingDate,
+			Date makeBillOfLadingDate, String responsiblePerson) {
+		super();
+		mBillOfLadingNo = billOfLadingNo;
+		mCustomerNo = customerNo;
+		mProductNo = productNo;
+		mOrderNum = orderNum;
+		mBillOfLadingDate = billOfLadingDate;
+		mMakeBillOfLadingDate = makeBillOfLadingDate;
+		mResponsiblePerson = responsiblePerson;
+	}
+
+
+	public String getBillOfLadingNo() {
+		return mBillOfLadingNo;
+	}
+
+
+	public void setBillOfLadingNo(String billOfLadingNo) {
+		mBillOfLadingNo = billOfLadingNo;
+	}
+
+
+	public String getCustomerNo() {
+		return mCustomerNo;
+	}
+
+
+	public void setCustomerNo(String customerNo) {
+		mCustomerNo = customerNo;
+	}
+
+
+	public String getProductNo() {
+		return mProductNo;
+	}
+
+
+	public void setProductNo(String productNo) {
+		mProductNo = productNo;
+	}
+
+
+	public int getOrderNum() {
+		return mOrderNum;
+	}
+
+
+	public void setOrderNum(int orderNum) {
+		mOrderNum = orderNum;
+	}
+
+
+	public Date getBillOfLadingDate() {
+		return mBillOfLadingDate;
+	}
+
+
+	public void setBillOfLadingDate(Date billOfLadingDate) {
+		mBillOfLadingDate = billOfLadingDate;
+	}
+
+
+	public Date getMakeBillOfLadingDate() {
+		return mMakeBillOfLadingDate;
+	}
+
+
+	public void setMakeBillOfLadingDate(Date makeBillOfLadingDate) {
+		mMakeBillOfLadingDate = makeBillOfLadingDate;
+	}
+
+
+	public String getResponsiblePerson() {
+		return mResponsiblePerson;
+	}
+
+
+	public void setResponsiblePerson(String responsiblePerson) {
+		mResponsiblePerson = responsiblePerson;
+	}
+}

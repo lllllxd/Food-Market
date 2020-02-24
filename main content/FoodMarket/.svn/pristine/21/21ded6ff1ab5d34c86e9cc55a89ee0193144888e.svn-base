@@ -1,0 +1,120 @@
+package com.sdu.wh.ui;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JInternalFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.table.DefaultTableModel;
+
+import org.eclipse.ui.internal.quickaccess.EditorElement;
+
+import com.sdu.wh.bll.FinanceBLL;
+import com.sdu.wh.common.ImagePanel;
+import com.sdu.wh.common.MyButtonEditor;
+import com.sdu.wh.common.MyButtonRenderer;
+
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.sql.Date;
+import java.util.ArrayList;
+import java.awt.event.ActionEvent;
+import java.awt.Color;
+import java.awt.Dimension;
+
+import javax.swing.JTable;
+import javax.swing.JTextField;
+
+import java.awt.FlowLayout;
+import javax.swing.JScrollPane;
+import javax.swing.JList;
+import javax.swing.JOptionPane;
+import javax.swing.JSpinner;
+
+/**
+ * 财务部
+ * @author Gale
+ *
+ */
+public class ProcessingOrderForm extends JInternalFrame {
+
+	private JPanel mcontentPane;
+	private JTable table;
+	private JTextField mtextField;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					ProcessingOrderForm frame = new ProcessingOrderForm();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public ProcessingOrderForm() {
+		setTitle("\u8BA2\u5355\u6536\u6B3E");
+		//窗口设置
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 599, 402);
+		setMaximizable(true);
+	    setMaximizable(true);
+	    setIconifiable(true);
+	    setClosable(true);
+	    setResizable(true);
+		mcontentPane = new ImagePanel(new BorderLayout(0, 0));
+		mcontentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(mcontentPane);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		//顶部面板
+		JPanel panel_1 = new JPanel();
+		panel_1.setPreferredSize(new Dimension(0, 30));
+		panel_1.setBackground(null);
+		panel_1.setOpaque(false);
+		mcontentPane.add(panel_1, BorderLayout.NORTH);
+		panel_1.setLayout(new BorderLayout(0, 0));
+		
+		//刷新按钮
+		JButton btnNewButton_1 = new JButton("\u66F4\u65B0\u5217\u8868");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				FinanceBLL.refreshFinanceTable(table);
+			}
+		});
+		panel_1.add(btnNewButton_1, BorderLayout.WEST);
+		
+		JPanel panel = new JPanel();
+		panel_1.add(panel, BorderLayout.EAST);
+		panel.setLayout(new BorderLayout(0, 0));
+		
+		JButton searchButton = new JButton("\u641C\u7D22");
+		panel.add(searchButton, BorderLayout.EAST);
+		
+		mtextField = new JTextField();
+		panel.add(mtextField, BorderLayout.WEST);
+		mtextField.setColumns(10);
+		
+		//滚动主面板
+		JScrollPane scrollPane = new JScrollPane();
+		mcontentPane.add(scrollPane, BorderLayout.CENTER);
+		
+		//表格组件
+		table = new JTable();
+		scrollPane.setViewportView(table);
+		
+		//初始化刷新表格
+		FinanceBLL.refreshFinanceTable(table);
+	}
+}

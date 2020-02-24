@@ -1,0 +1,316 @@
+package com.sdu.wh.ui;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+import java.awt.FlowLayout;
+import java.awt.Font;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JButton;
+import javax.swing.border.LineBorder;
+
+import com.sdu.wh.common.MDIDesktopPane;
+
+import java.awt.Color;
+import java.awt.Dimension;
+
+import javax.swing.BoxLayout;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.SwingConstants;
+import java.awt.GridLayout;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.border.MatteBorder;
+import javax.swing.border.EtchedBorder;
+
+public class MainForm extends JFrame {
+
+	private JPanel contentPane;
+	public static MDIDesktopPane desktop = new MDIDesktopPane();
+	
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					MainForm frame = new MainForm();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public MainForm() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 800, 600);
+		contentPane = new JPanel();
+		//contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		contentPane.setLayout(new BorderLayout(0, 0));
+		setContentPane(contentPane);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		//最大的panel
+		JPanel panel_0 = new JPanel();
+		//panel_0.setBackground(new Color(97,183,207));
+		panel_0.setPreferredSize(new Dimension(800,170));
+		panel_0.setLayout(new BorderLayout(0, 0));
+		contentPane.add(panel_0, BorderLayout.NORTH);
+		
+		//导航栏panel
+		JPanel panel = new JPanel();
+		panel.setBackground(new Color(97,183,207));
+		panel.setPreferredSize(new Dimension(800,95));
+		panel.setLayout(new BorderLayout(0, 0));
+		panel_0.add(panel,BorderLayout.NORTH);
+		
+		//导航栏panel的west里放大标题的panel
+		JPanel panel_1 = new JPanel();
+		panel_1.setBackground(new Color(97,183,207));
+		panel_1.setPreferredSize(new Dimension(320,95));
+		panel.add(panel_1,BorderLayout.WEST);
+		panel_1.setLayout(null);
+		
+		JTextArea textArea = new JTextArea();
+		textArea.setEditable(false);
+		textArea.setRows(2);
+		textArea.setBackground(new Color(97,183,207));
+		textArea.setFont(new Font("Microsoft YaHei", Font.PLAIN, 22));
+		textArea.setForeground(Color.WHITE);
+		textArea.setText("食品企业销售管理系统\n"+"     Food   Market");
+		textArea.setBounds(30, 20, 260, 64);
+		panel_1.add(textArea);
+		
+		
+		//导航栏east放登录登出按钮，最大最小关闭按钮的panel的panel
+		JPanel panel_3 = new JPanel();
+		panel.add(panel_3, BorderLayout.EAST);
+		panel_3.setBackground(new Color(97,183,207));
+		panel_3.setPreferredSize(new Dimension(330,90));
+		panel_3.setLayout(new BorderLayout(1,6));
+		
+		//上方panel的north放登录登出按钮，最大最小关闭按钮的panel
+		JPanel panel_2 = new JPanel();
+		panel_3.add(panel_2, BorderLayout.NORTH);
+		panel_2.setBackground(new Color(97,183,207));
+		panel_2.setPreferredSize(new Dimension(330,40));
+		panel_2.setLayout(new FlowLayout());
+		
+		JButton Admin=new JButton();
+		Admin.setForeground(new Color(255, 255, 255));
+		Admin.setFont(new Font("Microsoft YaHei", Font.PLAIN, 14));
+		Admin.setContentAreaFilled(false);
+		Admin.setBorderPainted(false); 
+		Admin.setText("<html><u>Administrator<html><u>");
+		panel_2.add(Admin);
+		
+		JLabel Gap=new JLabel();
+		Gap.setForeground(new Color(255, 255, 255));
+		Gap.setFont(new Font("Microsoft YaHei", Font.PLAIN, 14));
+		Gap.setPreferredSize(new Dimension(10,20));
+		Gap.setText("|");
+		panel_2.add(Gap);
+		
+		JButton Logout=new JButton();
+		Logout.setHorizontalAlignment(JButton.LEFT);
+		Logout.setForeground(new Color(255, 255, 255));
+		Logout.setFont(new Font("Microsoft YaHei", Font.PLAIN, 14));
+		Logout.setContentAreaFilled(false);
+		Logout.setBorderPainted(false); 
+		Logout.setText("<html><u>Log out<html><u>");
+		panel_2.add(Logout);
+		
+		//放五个管理部门的panel
+		JPanel panel_4 = new JPanel();
+		panel_0.add(panel_4, BorderLayout.CENTER);
+		panel_4.setBackground(new Color(237,246,248));
+		panel_4.setPreferredSize(new Dimension(330,40));
+		panel_4.setLayout(new GridLayout(1,5));
+		
+		JButton XsbBtn = new JButton();
+		XsbBtn.setText("销售部");
+		XsbBtn.setBackground(new Color(2, 81, 103));
+		XsbBtn.setForeground(new Color(255, 255, 255));
+		XsbBtn.setFont(new Font("Microsoft YaHei", Font.PLAIN, 14));
+		panel_4.add(XsbBtn);
+		
+		JButton CwbBtn = new JButton();
+		CwbBtn.setText("财务部");
+		CwbBtn.setForeground(new Color(2, 81, 103));
+		CwbBtn.setBackground(new Color(255, 255, 255));
+		CwbBtn.setFont(new Font("Microsoft YaHei", Font.PLAIN, 14));
+		panel_4.add(CwbBtn);
+		
+		JButton ScjhkBtn = new JButton();
+		ScjhkBtn.setText("生产计划科");
+		ScjhkBtn.setForeground(new Color(2, 81, 103));
+		ScjhkBtn.setBackground(new Color(255, 255, 255));
+		ScjhkBtn.setFont(new Font("Microsoft YaHei", Font.PLAIN, 14));
+		panel_4.add(ScjhkBtn);
+		
+		JButton SccjBtn = new JButton();
+		SccjBtn.setText("生产车间");
+		SccjBtn.setBackground(new Color(2, 81, 103));
+		SccjBtn.setForeground(new Color(255, 255, 255));
+		SccjBtn.setFont(new Font("Microsoft YaHei", Font.PLAIN, 14));
+		panel_4.add(SccjBtn);
+		
+		JButton CpkBtn = new JButton();
+		CpkBtn.setText("成品库");
+		CpkBtn.setBackground(new Color(2, 81, 103));
+		CpkBtn.setForeground(new Color(255, 255, 255));
+		CpkBtn.setFont(new Font("Microsoft YaHei", Font.PLAIN, 14));
+		panel_4.add(CpkBtn);
+		
+		//放每个部门功能的底层panel
+		JPanel panel_5 = new JPanel();
+		panel_0.add(panel_5, BorderLayout.SOUTH);
+		panel_5.setBackground(new Color(183,223,234));
+		panel_5.setPreferredSize(new Dimension(330,40));
+		panel_5.setLayout(new GridLayout(1,1));
+		//panel_5.setVisible(false);
+		
+		//分别放每个部门功能的panel
+		//销售部
+		JPanel Xsbpanel = new JPanel();
+		panel_5.add(Xsbpanel);
+		Xsbpanel.setBackground(new Color(183,223,234));
+		Xsbpanel.setPreferredSize(new Dimension(330,40));
+		Xsbpanel.setLayout(new FlowLayout());
+		
+		XsbBtn.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				panel_5.removeAll();
+				panel_5.add(Xsbpanel);
+				panel_5.revalidate();
+				panel_5.repaint();
+			}
+		});
+		
+		JButton CjkhBtn=new JButton();
+		CjkhBtn.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		CjkhBtn.setForeground(new Color(2, 81, 103));
+		CjkhBtn.setFont(new Font("Microsoft YaHei", Font.PLAIN, 14));
+		CjkhBtn.setContentAreaFilled(false);
+		CjkhBtn.setBorderPainted(false); 
+		CjkhBtn.setText("<html><u>创建客户</u></html>");
+		CjkhBtn.setPreferredSize(new Dimension(134,30));
+		Xsbpanel.add(CjkhBtn);
+		
+		JLabel Gap1=new JLabel();
+		Gap1.setForeground(new Color(2, 81, 103));
+		Gap1.setFont(new Font("Microsoft YaHei", Font.PLAIN, 14));
+		Gap1.setPreferredSize(new Dimension(10,30));
+		Gap1.setText("|");
+		Xsbpanel.add(Gap1);
+		
+		JButton CjddBtn=new JButton();
+		CjddBtn.setForeground(new Color(2, 81, 103));
+		CjddBtn.setFont(new Font("Microsoft YaHei", Font.PLAIN, 14));
+		CjddBtn.setContentAreaFilled(false);
+		CjddBtn.setBorderPainted(false); 
+		CjddBtn.setText("<html><u>创建订单</u></html>");
+		CjddBtn.setPreferredSize(new Dimension(134,30));
+		Xsbpanel.add(CjddBtn);
+		
+		JLabel Gap2=new JLabel();
+		Gap2.setForeground(new Color(2, 81, 103));
+		Gap2.setFont(new Font("Microsoft YaHei", Font.PLAIN, 14));
+		Gap2.setPreferredSize(new Dimension(10,30));
+		Gap2.setText("|");
+		Xsbpanel.add(Gap2);
+		
+		JButton QxddBtn=new JButton();
+		QxddBtn.setForeground(new Color(2, 81, 103));
+		QxddBtn.setFont(new Font("Microsoft YaHei", Font.PLAIN, 14));
+		QxddBtn.setContentAreaFilled(false);
+		QxddBtn.setBorderPainted(false); 
+		QxddBtn.setText("<html><u>取消订单</u></html>");
+		QxddBtn.setPreferredSize(new Dimension(134,30));
+		Xsbpanel.add(QxddBtn);
+		
+		JLabel Gap3=new JLabel();
+		Gap3.setForeground(new Color(2, 81, 103));
+		Gap3.setFont(new Font("Microsoft YaHei", Font.PLAIN, 14));
+		Gap3.setPreferredSize(new Dimension(10,30));
+		Gap3.setText("|");
+		Xsbpanel.add(Gap3);
+		
+		JButton YxclBtn=new JButton();
+		YxclBtn.setForeground(new Color(2, 81, 103));
+		YxclBtn.setFont(new Font("Microsoft YaHei", Font.PLAIN, 14));
+		YxclBtn.setContentAreaFilled(false);
+		YxclBtn.setBorderPainted(false); 
+		YxclBtn.setText("<html><u>营销策略</u></html>");
+		YxclBtn.setPreferredSize(new Dimension(134,30));
+		Xsbpanel.add(YxclBtn);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		desktop.setBackground(Color.WHITE);
+		scrollPane.setViewportView(desktop);
+		contentPane.add(scrollPane, BorderLayout.CENTER);
+		ProcessingOrderForm form = new ProcessingOrderForm();
+		form.setBounds(0, 0, 280, 140);
+		form.setPreferredSize(new Dimension(600, 400));
+		desktop.add(form);
+		
+		
+		//财务部
+		JPanel Cwbpanel = new JPanel();
+		//panel_0.add(Xsbpanel, BorderLayout.SOUTH);
+		Cwbpanel.setBackground(new Color(183,223,234));
+		Cwbpanel.setPreferredSize(new Dimension(330,40));
+		Cwbpanel.setLayout(new FlowLayout());
+		//Cwbpanel.setVisible(false);
+		
+		CwbBtn.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				panel_5.removeAll();
+				panel_5.add(Cwbpanel);
+				panel_5.revalidate();
+				panel_5.repaint();
+				//Cwbpanel.setVisible(true);
+				//Xsbpanel.setVisible(false);
+			}
+		});
+		
+		JButton SkBtn=new JButton();
+		SkBtn.setForeground(new Color(2, 81, 103));
+		SkBtn.setFont(new Font("Microsoft YaHei", Font.PLAIN, 14));
+		SkBtn.setContentAreaFilled(false);
+		SkBtn.setBorderPainted(false); 
+		SkBtn.setText("<html><u>收款</u></html>");
+		SkBtn.setPreferredSize(new Dimension(134,30));
+		Cwbpanel.add(SkBtn);
+		
+		JLabel Gap4=new JLabel();
+		Gap4.setForeground(new Color(2, 81, 103));
+		Gap4.setFont(new Font("Microsoft YaHei", Font.PLAIN, 14));
+		Gap4.setPreferredSize(new Dimension(10,30));
+		Gap4.setText("|");
+		Cwbpanel.add(Gap4);
+		
+		JButton TkBtn=new JButton();
+		TkBtn.setForeground(new Color(2, 81, 103));
+		TkBtn.setFont(new Font("Microsoft YaHei", Font.PLAIN, 14));
+		TkBtn.setContentAreaFilled(false);
+		TkBtn.setBorderPainted(false); 
+		TkBtn.setText("<html><u>退款</u></html>");
+		TkBtn.setPreferredSize(new Dimension(134,30));
+		Cwbpanel.add(TkBtn);
+	}
+
+}
